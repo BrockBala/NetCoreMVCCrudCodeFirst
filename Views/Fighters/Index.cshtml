@@ -1,0 +1,32 @@
+﻿@model List<NetCoreCrudCodefirst.Models.Domain.Fighter>
+
+@{
+}
+
+<h1 class="mb-5">List of Employees</h1>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>ID</th>*@
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Description</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var fighter in Model)
+        {
+            <tr>
+                <td>@fighter.Name</td>
+                <td>@fighter.Phone</td>
+                <td>@fighter.Email</td>
+                <td>@fighter.DOB.ToShortDateString()</td>
+                <td>@fighter.Description</td>
+                <td><a href="Fighters/ViewEmployee/@fighter.Id">view</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
